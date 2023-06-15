@@ -21,6 +21,14 @@ export class MarcaClient {
         }
     }
 
+	public async findByAtivo(ativo: boolean) : Promise<Marca> {
+        try {
+            return (await this.axiosClient.get<Marca>(`/${ativo}`)).data
+        } catch (error:any) {
+            return Promise.reject(error.response)
+        }
+    }
+
 	public async cadastrar(marca: Marca): Promise<void> {
 		try {
 			return (await this.axiosClient.post('/', marca))
@@ -37,7 +45,7 @@ export class MarcaClient {
 		}
 	}
 
-	public async desativa(marca: Marca): Promise<void> {
+	public async desativar(marca: Marca): Promise<void> {
 		try {
 			return (await this.axiosClient.put(`/desativar/${marca.id}`, marca)).data
 		} catch (error:any) {

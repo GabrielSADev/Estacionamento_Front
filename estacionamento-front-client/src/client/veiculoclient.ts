@@ -21,6 +21,14 @@ export class VeiculoClient {
         }
     }
 
+	public async findByAtivo(ativo: boolean) : Promise<Veiculo> {
+        try {
+            return (await this.axiosClient.get<Veiculo>(`/${ativo}`)).data
+        } catch (error:any) {
+            return Promise.reject(error.response)
+        }
+    }
+
 	public async cadastrar(veiculo: Veiculo): Promise<void> {
 		try {
 			return (await this.axiosClient.post('/', veiculo))
@@ -37,7 +45,7 @@ export class VeiculoClient {
 		}
 	}
 
-	public async desativa(veiculo: Veiculo): Promise<void> {
+	public async desativar(veiculo: Veiculo): Promise<void> {
 		try {
 			return (await this.axiosClient.put(`/desativar/${veiculo.id}`, veiculo)).data
 		} catch (error:any) {

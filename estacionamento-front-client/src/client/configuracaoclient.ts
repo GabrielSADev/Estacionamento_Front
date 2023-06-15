@@ -36,7 +36,7 @@ export class ConfiguracaoClient {
 		}
 	}
 
-	public async desativa(configuracao: Configuracao): Promise<void> {
+	public async desativar(configuracao: Configuracao): Promise<void> {
 		try {
 			return (await this.axiosClient.put(`/desativar/${configuracao.id}`, configuracao)).data
 		} catch (error:any) {

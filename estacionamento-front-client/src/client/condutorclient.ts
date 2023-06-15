@@ -24,6 +24,14 @@ export class CondutorClient {
         }
     }
 
+	public async findByAtivo(ativo: boolean) : Promise<Condutor> {
+        try {
+            return (await this.axiosClient.get<Condutor>(`/${ativo}`)).data
+        } catch (error:any) {
+            return Promise.reject(error.response)
+        }
+    }
+
 	public async cadastrar(condutor: Condutor): Promise<void> {
 		try {
 			return (await this.axiosClient.post('/', condutor))
@@ -40,7 +48,7 @@ export class CondutorClient {
 		}
 	}
 
-	public async desativa(condutor: Condutor): Promise<void> {
+	public async desativar(condutor: Condutor): Promise<void> {
 		try {
 			return (await this.axiosClient.put(`/desativar/${condutor.id}`, condutor)).data
 		} catch (error:any) {

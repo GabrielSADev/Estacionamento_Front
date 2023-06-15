@@ -21,6 +21,14 @@ export class MovimentacaoClient {
         }
     }
 
+	public async findByAtivo(ativo: boolean) : Promise<Movimentacao> {
+        try {
+            return (await this.axiosClient.get<Movimentacao>(`/${ativo}`)).data
+        } catch (error:any) {
+            return Promise.reject(error.response)
+        }
+    }
+
 	public async cadastrar(movimentacao: Movimentacao): Promise<void> {
 		try {
 			return (await this.axiosClient.post('/', movimentacao))
@@ -37,7 +45,7 @@ export class MovimentacaoClient {
 		}
 	}
 
-	public async desativa(movimentacao: Movimentacao): Promise<void> {
+	public async desativar(movimentacao: Movimentacao): Promise<void> {
 		try {
 			return (await this.axiosClient.put(`/desativar/${movimentacao.id}`, movimentacao)).data
 		} catch (error:any) {
