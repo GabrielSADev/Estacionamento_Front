@@ -44,4 +44,12 @@ export class MarcaClient {
 			return Promise.reject(error.response)
 		}
 	}
+
+	public async deletaMarca(marca: Marca): Promise<void> {
+        try {
+          return (await this.axiosClient.delete(`/deletaMarca/${marca.id}`, { data: marca })).data;
+        } catch (error: any) {
+          return Promise.reject(error.response);
+        }
+      }
 }

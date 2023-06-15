@@ -44,4 +44,12 @@ export class VeiculoClient {
 			return Promise.reject(error.response)
 		}
 	}
+
+	public async deletaVeiculo(veiculo: Veiculo): Promise<void> {
+        try {
+          return (await this.axiosClient.delete(`/deletaVeiculo/${veiculo.id}`, { data: veiculo })).data;
+        } catch (error: any) {
+          return Promise.reject(error.response);
+        }
+      }
 }

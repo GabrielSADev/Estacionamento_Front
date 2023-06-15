@@ -44,4 +44,14 @@ export class MovimentacaoClient {
 			return Promise.reject(error.response)
 		}
 	}
+/* ======SE NECESSARIO======
+
+	public async deletaMovimentacao(movimentacao: Movimentacao): Promise<void> {
+        try {
+          return (await this.axiosClient.delete(`/deletaMovimentacao/${movimentacao.id}`, { data: movimentacao })).data;
+        } catch (error: any) {
+          return Promise.reject(error.response);
+        }
+      }
+*/
 }

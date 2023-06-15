@@ -47,5 +47,13 @@ export class CondutorClient {
 			return Promise.reject(error.response)
 		}
 	}
+
+	public async deletaCondutor(condutor: Condutor): Promise<void> {
+        try {
+          return (await this.axiosClient.delete(`/deletaCondutor/${condutor.id}`, { data: condutor })).data;
+        } catch (error: any) {
+          return Promise.reject(error.response);
+        }
+      }
 }
 
