@@ -23,7 +23,7 @@ export class MarcaClient {
 
 	public async findByAtivo(ativo: boolean) : Promise<Marca> {
         try {
-            return (await this.axiosClient.get<Marca>(`/${ativo}`)).data
+            return (await this.axiosClient.get<Marca>(`/ativo/${ativo}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }

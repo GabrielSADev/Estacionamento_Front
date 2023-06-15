@@ -21,9 +21,9 @@ export class MovimentacaoClient {
         }
     }
 
-	public async findByAtivo(ativo: boolean) : Promise<Movimentacao> {
+	public async findByAberto(aberto: boolean) : Promise<Movimentacao> {
         try {
-            return (await this.axiosClient.get<Movimentacao>(`/${ativo}`)).data
+            return (await this.axiosClient.get<Movimentacao>(`/ativo/${aberto}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }

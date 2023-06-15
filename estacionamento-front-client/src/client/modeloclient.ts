@@ -21,6 +21,14 @@ export class ModeloClient {
         }
     }
 
+	public async findByAtivo(ativo: boolean) : Promise<Modelo> {
+        try {
+            return (await this.axiosClient.get<Modelo>(`/ativo/${ativo}`)).data
+        } catch (error:any) {
+            return Promise.reject(error.response)
+        }
+    }
+
 	public async cadastrar(modelo: Modelo): Promise<void> {
 		try {
 			return (await this.axiosClient.post('/', modelo))

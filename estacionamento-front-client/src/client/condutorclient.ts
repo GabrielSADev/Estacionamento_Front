@@ -26,7 +26,7 @@ export class CondutorClient {
 
 	public async findByAtivo(ativo: boolean) : Promise<Condutor> {
         try {
-            return (await this.axiosClient.get<Condutor>(`/${ativo}`)).data
+            return (await this.axiosClient.get<Condutor>(`/ativo/${ativo}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }

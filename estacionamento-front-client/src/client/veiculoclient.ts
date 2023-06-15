@@ -23,7 +23,7 @@ export class VeiculoClient {
 
 	public async findByAtivo(ativo: boolean) : Promise<Veiculo> {
         try {
-            return (await this.axiosClient.get<Veiculo>(`/${ativo}`)).data
+            return (await this.axiosClient.get<Veiculo>(`/ativo/${ativo}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }
