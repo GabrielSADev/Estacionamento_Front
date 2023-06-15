@@ -7,12 +7,4 @@ export class Condutor extends AbstractEntity{
     tempoPago?: Date
     tempoDesconto?: Date
 
-    constructor(nome: String, cpf: String, telefone: String) {
-        super()
-        this.ativo = true
-        this.nome = nome
-        this.cpf = cpf
-        this.telefone = telefone
-    }
-
 }

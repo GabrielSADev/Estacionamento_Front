@@ -15,11 +15,4 @@ export class Veiculo extends AbstractEntity{
 
     tipo?: Tipo
 
-    
-    constructor(modelo: Modelo, nome: String){
-        super()
-        this.modelo = modelo;
-        this.ativo = true
-    }
-    
 }
