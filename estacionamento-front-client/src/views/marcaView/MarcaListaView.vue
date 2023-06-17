@@ -1,6 +1,10 @@
 <template>
 <header>
     <div class="class_button">
+        <div class="divLabelMarca">
+            <label for="" id="labelMarca">Nome da Marca :</label>
+            <input type="text" name="Nome da Marca" id="nomeMarca">
+        </div>
         <button>Adicionar Marca</button>
     </div>
 </header>
@@ -57,11 +61,13 @@
 
 <style>
     .class_button{
-        background-color: #5e17eb;
+        background-color: #4f04e7;
         height: 10vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 2vw;
+        
     }
     button{
         border-radius: 8px;
@@ -71,5 +77,20 @@
         color: #5e17eb;
         font-weight: 750;
     }
-
+    #nomeMarca{
+        border-radius: 8px;
+        padding: 2% 0%;
+        border: none;
+    }
+    #labelMarca{
+        color: #ff914d;
+        font-size: 2vw;
+    }
+    .divLabelMarca{
+        background-color: #5e17eb;
+        border-radius: 8px;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-around;
+    }
 </style>
