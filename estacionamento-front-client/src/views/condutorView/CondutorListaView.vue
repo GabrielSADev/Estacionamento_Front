@@ -22,6 +22,7 @@
       <th scope="col">Telefone</th>
       <th scope="col">Condutor</th>
       <th scope="col" id="modelo">Veiculo</th>
+      <th scope="col" id="modelo">Tempo</th>
       <th  colspan="4" scope="col">EDITAR</th>
 
     </tr>
@@ -32,6 +33,7 @@
       <td>(OO) OOOOO - OOOO</td>
       <td>Gabriel S.</td>
       <td>XXT-2004</td>
+      <td>20:00 Hrs</td>
       <td colspan="3">✎</td>
       <td colspan="3">🗑️</td>
     </tr>
@@ -40,6 +42,7 @@
       <td>(OO) OOOOO - OOOO</td>
       <td>Silvio A.</td>
       <td>OTM-2023</td>
+      <td>05:00 Hrs</td>
       <td colspan="3">✎</td>
       <td colspan="3">🗑️</td>
     </tr>
@@ -48,6 +51,7 @@
       <td>(OO) OOOOO - OOOO</td>
       <td>Fernanda G.</td>
       <td>AWP-2016</td>
+      <td>13:00 Hrs</td>
       <td colspan="3">✎</td>
       <td colspan="3">🗑️</td>
     </tr>
@@ -56,6 +60,7 @@
       <td>(OO) OOOOO - OOOO</td>
       <td>Inacio X.</td>
       <td>BRA-157</td>
+      <td>22:35 Hrs</td>
       <td colspan="3">✎</td>
       <td colspan="3">🗑️</td>
     </tr>
@@ -64,6 +69,7 @@
       <td>(OO) OOOOO - OOOO</td>
       <td>Lucio D.</td>
       <td>GTX-1080</td>
+      <td>43:22 Hrs</td>
       <td colspan="3">✎</td>
       <td colspan="3">🗑️</td>
     </tr>
@@ -93,6 +99,10 @@
     gap:1vw;
     padding: 1.2vh 1vw;
     border-radius: 6px;
+}
+.tit{
+    color: #ff914d;
+        font-size: 1.8vw;
 }
 
 </style>
