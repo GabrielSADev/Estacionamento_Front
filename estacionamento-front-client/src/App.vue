@@ -4,7 +4,7 @@
     <router-link to="/about">About</router-link> -->
     <img id="logo" src="../src/assets/EstacionamentoLogo.png" alt="">
     <router-link to="" id="pg_inicial">PG/Inicial</router-link>
-    <router-link to="/veiculos">Veiculos</router-link>
+    <router-link to="/lista-veiculo">Veiculos</router-link>
     <router-link to="/listar-marca">Marcas</router-link>
     <router-link to="/lista-modelo">Modelos</router-link>
     <router-link to="">Condutores</router-link>
