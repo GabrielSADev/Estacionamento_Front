@@ -104,5 +104,12 @@
     color: #ff914d;
         font-size: 1.8vw;
 }
-
+button{
+        border-radius: 8px;
+        border: none;
+        padding: 0.7rem 0.8rem;
+        background-color: #ff914d;
+        color: #5e17eb;
+        font-weight: 750;
+    }
 </style>

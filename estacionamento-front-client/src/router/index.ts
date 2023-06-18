@@ -39,6 +39,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/configuracao",
     name: "configuracoes",
     component: () => import('../views/configView/ConfiguracaoView.vue')
+  },
+  {
+    path:'/pag-Central',
+    name:'paginaCentral',
+    component: () => import('../views/PgCentralView/PaginaCentralView.vue')
   }
   
 ]
