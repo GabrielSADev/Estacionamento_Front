@@ -7,7 +7,7 @@
     <router-link to="/lista-veiculo">Veiculos</router-link>
     <router-link to="/listar-marca">Marcas</router-link>
     <router-link to="/lista-modelo">Modelos</router-link>
-    <router-link to="">Condutores</router-link>
+    <router-link to="/lista-condutor">Condutores</router-link>
     <router-link to="" id="gear">⚙️</router-link>
     
 
