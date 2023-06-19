@@ -82,7 +82,7 @@
     button{
         border-radius: 8px;
         border: none;
-        padding: 0.7rem 0.8rem;
+        padding: 0.7% 0.8%;
         background-color: #ff914d;
         color: #5e17eb;
         font-weight: 750;

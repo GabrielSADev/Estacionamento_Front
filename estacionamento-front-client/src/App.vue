@@ -3,12 +3,12 @@
    <!--- <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> -->
     <img id="logo" src="../src/assets/EstacionamentoLogo.png" alt="">
-    <router-link to="/pag-Central" id="pg_inicial">PG/Inicial</router-link>
-    <router-link to="/lista-veiculo">Veiculos</router-link>
-    <router-link to="/listar-marca">Marcas</router-link>
-    <router-link to="/lista-modelo">Modelos</router-link>
-    <router-link to="/lista-condutor">Condutores</router-link>
-    <router-link to="/configuracao" id="gear">⚙️</router-link>
+    <router-link to="/pag-Central" id="pg_inicial" >PG/Inicial</router-link>
+    <router-link to="/lista-veiculo" class="routerOPC">Veiculos</router-link>
+    <router-link to="/listar-marca" class="routerOPC">Marcas</router-link>
+    <router-link to="/lista-modelo" class="routerOPC">Modelos</router-link>
+    <router-link to="/lista-condutor" class="routerOPC">Condutores</router-link>
+    <router-link to="/configuracao" id="gear" class="routerOPC">⚙️</router-link>
     
 
 
@@ -73,5 +73,9 @@ nav {
       font-family: system-ui, 'Segoe UI', Roboto, Oxygen, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
   }
+}
+.routerOPC:hover{
+  transition: 0.5s;
+  color: #ff914d;
 }
 </style>

@@ -1,5 +1,7 @@
 <template>
-    <div class="linhaDiv"></div>
+    <div class="linhaDiv">
+      <h1>Configurações</h1>
+    </div>
   <table class="table table-striped">
   <thead>
     <tr class="tr">
@@ -74,7 +76,11 @@
     .linhaDiv{
     
         background-color: #4f04e7;
-        height: 10vh;        
+        height: 10vh;   
+        display: flex;
+        align-items: center;  
+        justify-content: center;
+        color: #ff914d;   
     }
 
 </style>
