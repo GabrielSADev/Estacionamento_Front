@@ -44,6 +44,11 @@ const routes: Array<RouteRecordRaw> = [
     path:'/pag-Central',
     name:'paginaCentral',
     component: () => import('../views/PgCentralView/PaginaCentralView.vue')
+  },
+  {
+    path:'/movimentacao',
+    name:'final movimentacao',
+    component: () => import('../views/MovimentacaoView/MoviLista.vue')
   }
   
 ]

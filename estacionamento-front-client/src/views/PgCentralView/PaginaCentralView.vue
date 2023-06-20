@@ -20,7 +20,9 @@
     <tr>
       <th scope="row">Gabriel S. A.</th>
       <td>XXT-2004</td>
-      <td colspan="3">✂️</td>
+      <a href="../MovimentacaoView/MoviLista.vue">
+        <td colspan="3">✂️</td>
+      </a>
     </tr>
     <tr>
       <th scope="row">Eduardo C. V.</th>
@@ -30,7 +32,7 @@
     <tr>
       <th scope="row">Maria X. D.</th>
       <td>EMN-4949</td>
-      <td colspan="3">✂️</td>
+      <td colspan="3" >✂️</td>
     </tr>
     <tr>
       <th scope="row">Arthur P. M.</th>
@@ -73,5 +75,6 @@
     gap:1vw;
     padding: 1.2vh 1vw;
     border-radius: 6px;
+    color: #ff914d;
     }
 </style>
