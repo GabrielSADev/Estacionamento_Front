@@ -10,21 +10,59 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/listar-marca',
+    path: '/marca/lista',
     name: 'marca-lista-view',
   component: () => import('../views/marcaView/MarcaListaView.vue')
   },
   {
-    path: '/lista-modelo',
+    path: '/marca/formulario',
+    name: 'marca-formulario-view',
+    component: () => import( '../views/marcaView/MarcaFormView.vue'),
+    children: [
+      {
+        path: '/marca/formulario',
+        name: 'marca-formulario-editar-view',
+        component: () => import( '../views/marcaView/MarcaFormView.vue')
+      },
+      {
+        path: '/marca/formulario',
+        name: 'marca-formulario-excluir-view',
+        component: () => import('../views/marcaView/MarcaFormView.vue')
+      }
+    ]
+  },
+
+  {
+    path: '/modelo/lista',
     name: 'modelo-lista-view',
     component: () => import('../views/modeloView/ModeloListaView.vue')
   },
+  {
+    path: '/modelo/formulario',
+    name: 'modelo-formulario-view',
+    component: () => import( '../views/modeloView/ModeloFormView.vue'),
+    children: [
+      {
+        path: '/modelo/formulario',
+        name: 'modelo-formulario-editar-view',
+        component: () => import( '../views/modeloView/ModeloFormView.vue')
+      },
+      {
+        path: '/modelo/formulario',
+        name: 'modelo-formulario-excluir-view',
+        component: () => import('../views/modeloView/ModeloFormView.vue')
+      }
+    ]
+  },
+
+
+
+
+
+
   {
     path: '/lista-veiculo',
     name: 'veiculo-lista-view',

@@ -5,8 +5,8 @@
     <img id="logo" src="../src/assets/EstacionamentoLogo.png" alt="">
     <router-link to="/pag-Central" id="pg_inicial" >PG/Inicial</router-link>
     <router-link to="/lista-veiculo" class="routerOPC">Veiculos</router-link>
-    <router-link to="/listar-marca" class="routerOPC">Marcas</router-link>
-    <router-link to="/lista-modelo" class="routerOPC">Modelos</router-link>
+    <router-link to="/marca/lista" class="routerOPC">Marcas</router-link>
+    <router-link to="/modelo/lista" class="routerOPC">Modelos</router-link>
     <router-link to="/lista-condutor" class="routerOPC">Condutores</router-link>
     <router-link to="/configuracao" id="gear" class="routerOPC">⚙️</router-link>
     

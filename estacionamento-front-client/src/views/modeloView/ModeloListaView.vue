@@ -1,117 +1,79 @@
 <template>
 
-<header>
-    <div class="class_button">
-        <div class="divLabelModelo">
-            <label for="" id="labelMarcaModelo">Marca :</label>
-            <input type="text" name="Nome da Marca no Modelo" id="nomeMarcaModelo">
-            <label for="" id="labelModelo">Nome do Modelo :</label>
-            <input type="text" name="Nome do Modelo" id="nomeModelo">
-        </div>
-        <button>Adicionar Modelo</button>
+<div class="container" style="margin-top: 10px;">
+
+<div class="row">
+  <div class="col-md-10 text-start"> <p class="fs-3"> Lista de Modelos </p> </div>
+  <div class="col-md-2"> 
+    <div class="d-grid gap-2">
+      <router-link type="button" class="btn btn-success" 
+        to="/modelo/formulario">Cadastrar
+      </router-link>
     </div>
-</header>
+  </div>
+</div>
 
-<table class="table table-striped">
-  <thead>
-    <tr class="tr">
-      <th scope="col">Id</th>
-      <th scope="col">Marca</th>
-      <th scope="col" id="modelo">Modelo</th>
-      <th colspan="4" scope="col">EDITAR</th>
+<div class="row">
+  <div class="col-md-12">  
+    <table class="table">
+      <thead class="table-secondary" >
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Ativo</th>
+          <th scope="col" class="text-start">Marca</th>
+          <th scope="col" class="text-start">Modelo</th>
+          <th scope="col">Opção</th>
+        </tr>
+      </thead>  
+      <tbody class="table-group-divider">
+        
+        <tr v-for="item in modelosList" :key="item.id">
+          <th class="col-md-1">{{ item.id }}</th>
+          <th class="col-md-2"> 
+            <span v-if="item.ativo" class="badge text-bg-success"> Ativo </span>
+            <span v-if="!item.ativo" class="badge text-bg-danger"> Inativo </span>
+          </th>
+          <th class="text-start">{{ item.nome }}</th>
+          <th class="col-md-2">
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <router-link type="button" class="btn btn-sm btn-warning" 
+                  :to="{ name: 'modelo-formulario-editar-view', query: { id: item.id, form: 'editar' } } "> 
+                Editar 
+              </router-link>
+              <router-link type="button" class="btn btn-sm btn-danger" 
+                  :to="{ name: 'modelo-formulario-excluir-view', query: { id: item.id, form: 'deletaModelo' } } ">
+                Excluir
+              </router-link>
+            </div>
+          </th>
+        </tr>
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Wolkswagen</td>
-      <td>Pollo</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Ford</td>
-      <td>Mustang</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Ferrari</td>
-      <td>Portofino</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Renault</td>
-      <td>Duster</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Peugeot</td>
-      <td>e-208</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-  </tbody>
-</table>
-
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
 
 </template>
 
 <script lang="ts">
 
+import { defineComponent } from 'vue';
+
+import  ModeloClient  from '@/client/modeloclient';
+import { Modelo } from '@/model/modelo';
+
+export default defineComponent({
+name: 'ModeloLista',
+data() {
+  return {
+      modelosList: new Array<Modelo>()
+  }
+}
+})
 
 </script>
 
 <style>
-.class_button{
-        background-color: #4f04e7;
-        height: 10vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2vw;
-        
-    }
-    button{
-        border-radius: 8px;
-        border: none;
-        padding: 0.7% 0.8%;
-        background-color: #ff914d;
-        color: #5e17eb;
-        font-weight: 750;
-    }
-    .divLabelModelo{
-        background-color: #5e17eb;
-        border-radius: 8px;
-        padding: 6px 10px;
-        display: flex;
-        justify-content: center;
-        gap: 1.5vw;
-        align-items: center;
-    }
-    #nomeModelo{
-        border-radius: 8px;
-        padding: 1.3% 0%;
-        border: none;
-    }
-    #nomeMarcaModelo{
-        border-radius: 8px;
-        padding: 1.3% 0%;
-        border: none;
-    }
-    #labelMarcaModelo{
-        color: #ff914d;
-        font-size: 1.6vw;
-    }
-    #labelModelo{
-        color: #ff914d;
-        font-size: 1.6vw;
-    }
+
 </style>

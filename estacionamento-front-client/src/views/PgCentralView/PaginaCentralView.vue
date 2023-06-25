@@ -20,9 +20,7 @@
     <tr>
       <th scope="row">Gabriel S. A.</th>
       <td>XXT-2004</td>
-      <a href="../MovimentacaoView/MoviLista.vue">
-        <td colspan="3">✂️</td>
-      </a>
+        <td colspan="3" onclick="window.location.href='/movimentacao'">✂️</td>
     </tr>
     <tr>
       <th scope="row">Eduardo C. V.</th>

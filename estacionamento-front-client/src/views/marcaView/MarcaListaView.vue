@@ -1,96 +1,93 @@
 <template>
-<header>
-    <div class="class_button">
-        <div class="divLabelMarca">
-            <label for="" id="labelMarca">Nome da Marca :</label>
-            <input type="text" name="Nome da Marca" id="nomeMarca">
-        </div>
-        <button>Adicionar Marca</button>
+<div class="container" style="margin-top: 10px;">
+
+<div class="row">
+  <div class="col-md-10 text-start"> <p class="fs-3"> Lista de Marcas </p> </div>
+  <div class="col-md-2"> 
+    <div class="d-grid gap-2">
+      <router-link type="button" class="btn btn-success" 
+        to="/marca/formulario">Cadastrar
+      </router-link>
     </div>
-</header>
+  </div>
+</div>
 
-<table class="table table-striped">
-  <thead>
-    <tr class="tr">
-      <th scope="col">Id</th>
-      <th scope="col">Marca</th>
-      <th colspan="6" scope="col">EDITAR</th>
+<div class="row">
+  <div class="col-md-12">  
+    <table class="table">
+      <thead class="table-secondary" >
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Ativo</th>
+          <th scope="col" class="text-start">Marca</th>
+          <th scope="col">Opção</th>
+        </tr>
+      </thead>  
+      <tbody class="table-group-divider">
+        
+        <tr v-for="item in marcasList" :key="item.id">
+          <th class="col-md-1">{{ item.id }}</th>
+          <th class="col-md-2"> 
+            <span v-if="item.ativo" class="badge text-bg-success"> Ativo </span>
+            <span v-if="!item.ativo" class="badge text-bg-danger"> Inativo </span>
+          </th>
+          <th class="text-start">{{ item.nome }}</th>
+          <th class="col-md-2">
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <router-link type="button" class="btn btn-sm btn-warning" 
+                  :to="{ name: 'marca-formulario-editar-view', query: { id: item.id, form: 'editar' } } "> 
+                Editar 
+              </router-link>
+              <router-link type="button" class="btn btn-sm btn-danger" 
+                  :to="{ name: 'marca-formulario-excluir-view', query: { id: item.id, form: 'deletaMarca' } } ">
+                Excluir
+              </router-link>
+            </div>
+          </th>
+        </tr>
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Wolkswagen</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Ford</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Ferrari</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Renault</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Peugeot</td>
-      <td>✎</td>
-      <td>🗑️</td>
-    </tr>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
 
 </template>
 
 <script lang="ts">
 
+  import { defineComponent } from 'vue';
+
+  import  MarcaClient  from '@/client/marcaclient';
+  import { Marca } from '@/model/marca';
+ 
+  export default defineComponent({
+  name: 'MarcaLista',
+  data() {
+    return {
+        marcasList: new Array<Marca>()
+    }
+  },
+  mounted() {
+    this.findAll();
+  },
+  methods: {
+
+    findAll() {
+      MarcaClient.listaAll().then(sucess => {
+        this.marcasList = sucess
+      })
+      .catch(error => {
+          console.log(error);
+        });
+    }
+  }
+});
+
 
 </script>
 
-<style>
-    .class_button{
-        background-color: #4f04e7;
-        height: 10vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2vw;
-        
-    }
-    button{
-        border-radius: 8px;
-        border: none;
-        padding: 0.7% 0.8%;
-        background-color: #ff914d;
-        color: #5e17eb;
-        font-weight: 750;
-    }
-    #nomeMarca{
-        border-radius: 8px;
-        padding: 2% 0%;
-        border: none;
-    }
-    #labelMarca{
-        color: #ff914d;
-        font-size: 2vw;
-    }
-    .divLabelMarca{
-        background-color: #5e17eb;
-        border-radius: 8px;
-        padding: 5px 10px;
-        display: flex;
-        justify-content: space-around;
-    }
+<style lang="scss">
+   
 </style>
