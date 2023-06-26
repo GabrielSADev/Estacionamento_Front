@@ -59,20 +59,34 @@ const routes: Array<RouteRecordRaw> = [
   },
 
 
-
-
-
-
   {
-    path: '/lista-veiculo',
+    path: '/veiculo/lista',
     name: 'veiculo-lista-view',
     component: () => import('../views/veiculoView/VeiculoListaView.vue')
+  },
+  {
+    path: '/veiculo/formulario',
+    name: 'veiculo-formulario-view',
+    component: () => import( '../views/veiculoView/VeiculoFormView.vue'),
+    children: [
+      {
+        path: '/veiculo/formulario',
+        name: 'veiculo-formulario-editar-view',
+        component: () => import( '../views/veiculoView/VeiculoFormView.vue')
+      },
+      {
+        path: '/veiculo/formulario',
+        name: 'veiculo-formulario-excluir-view',
+        component: () => import('../views/veiculoView/VeiculoFormView.vue')
+      }
+    ]
   },
   {
     path: '/lista-condutor',
     name: 'condutor-lista-view',
     component: () => import('../views/condutorView/CondutorListaView.vue')
   },
+  
   {
     path: "/configuracao",
     name: "configuracoes",

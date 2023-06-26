@@ -9,7 +9,7 @@ export class Veiculo extends AbstractEntity{
     placa!: String
     ano!: Int8Array
 
-    modelo?: Modelo
+    modelo!: Modelo
 
     cor!: Cor
 
