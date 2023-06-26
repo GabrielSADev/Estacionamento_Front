@@ -2,8 +2,8 @@ import { AbstractEntity } from "./abstract-entity";
 import { Marca } from "./marca";
 
 export class Modelo extends AbstractEntity{
-    nome?: String
+    nome!: String
 
-    marca?: Marca
+    marca!: Marca
 
 }

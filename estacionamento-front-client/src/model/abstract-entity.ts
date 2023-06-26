@@ -4,5 +4,4 @@ export class AbstractEntity {
     edicao?: Date
     ativo!: boolean
 
-
 }

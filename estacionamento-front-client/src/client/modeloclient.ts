@@ -4,7 +4,7 @@ import { Modelo } from '@/model/modelo';
 
  class ModeloClient {
 
-    private axiosClient: AxiosInstance;
+    private axiosClient: AxiosInstance
 
     constructor() {
         this.axiosClient = axios.create({
