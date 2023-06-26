@@ -7,7 +7,7 @@
     <router-link to="/veiculo/lista" class="routerOPC">Veiculos</router-link>
     <router-link to="/marca/lista" class="routerOPC">Marcas</router-link>
     <router-link to="/modelo/lista" class="routerOPC">Modelos</router-link>
-    <router-link to="/lista-condutor" class="routerOPC">Condutores</router-link>
+    <router-link to="/condutor/lista" class="routerOPC">Condutores</router-link>
     <router-link to="/configuracao" id="gear" class="routerOPC">⚙️</router-link>
     
 

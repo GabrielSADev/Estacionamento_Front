@@ -20,7 +20,9 @@
 <div class="row">
   <div class="col-md-12 text-start">
     <label for="recipient-name" class=" row m-auto col-form-label">Nome da Marca:</label>
-      <select type="text" v-model="modelo.marca"><option v-for="item in marca" :value="item">{{ item.nome }} </option></select>
+      <select type="text" v-model="modelo.marca">
+        <option v-for="item in marca" :value="item">{{ item.nome }} </option>
+      </select>
   </div>
     <div class="col-md-12 text-start">
         <label class="form-label">Nome do Modelo</label>

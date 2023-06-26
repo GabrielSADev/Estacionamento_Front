@@ -81,12 +81,30 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   },
+
   {
-    path: '/lista-condutor',
+    path: '/condutor/lista',
     name: 'condutor-lista-view',
     component: () => import('../views/condutorView/CondutorListaView.vue')
   },
-  
+  {
+    path: '/condutor/formulario',
+    name: 'condutor-formulario-view',
+    component: () => import( '../views/condutorView/CondutorFormView.vue'),
+    children: [
+      {
+        path: '/condutor/formulario',
+        name: 'condutor-formulario-editar-view',
+        component: () => import( '../views/condutorView/CondutorFormView.vue')
+      },
+      {
+        path: '/condutor/formulario',
+        name: 'condutor-formulario-excluir-view',
+        component: () => import('../views/condutorView/CondutorFormView.vue')
+      }
+    ]
+  },
+
   {
     path: "/configuracao",
     name: "configuracoes",
