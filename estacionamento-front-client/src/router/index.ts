@@ -106,10 +106,29 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   {
-    path: "/configuracao",
-    name: "configuracoes",
-    component: () => import('../views/configView/ConfiguracaoView.vue')
+    path: "/configuracao/pagina",
+    name: "condutor-lista-view",
+    component: () => import('../views/configView/ConfiguracaoListaView.vue')
   },
+  {
+    path: '/configuracao/formulario',
+    name: 'configuracao-formulario-view',
+    component: () => import( '../views/configView/ConfigFormView.vue'),
+    children: [
+      {
+        path: '/configuracao/formulario',
+        name: 'configuracao-formulario-editar-view',
+        component: () => import( '../views/configView/ConfigFormView.vue')
+      },
+      {
+        path: '/configuracao/formulario',
+        name: 'configuracao-formulario-excluir-view',
+        component: () => import('../views/configView/ConfigFormView.vue')
+      }
+    ]
+  },
+
+
   {
     path:'/pag-Central',
     name:'paginaCentral',
