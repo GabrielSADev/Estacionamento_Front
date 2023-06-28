@@ -164,6 +164,7 @@
         align-items: center;  
         justify-content: center;
         color: #ff914d;  
+        width: 100vw;
     }
 </style>
 

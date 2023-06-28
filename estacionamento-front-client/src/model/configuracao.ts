@@ -1,7 +1,7 @@
 import { AbstractEntity } from "./abstract-entity"
 
 export class Configuracao extends AbstractEntity {
-    valorHora?: Float32Array;
+    valorHora!: Float32Array;
     valorMinutoMulta?: Float32Array;
     inicioExpediente?: Date;
     fimExpediente?: Date;

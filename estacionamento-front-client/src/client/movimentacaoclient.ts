@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios';
 
 import { Movimentacao } from '@/model/movimentacao';
 
-export class MovimentacaoClient {
+ class MovimentacaoClient {
 
     private axiosClient: AxiosInstance;
 
@@ -21,45 +21,53 @@ export class MovimentacaoClient {
         }
     }
 
-	public async findByAberto(aberto: boolean) : Promise<Movimentacao> {
+	public async listaAllAtivo(): Promise<Movimentacao[]> {
         try {
-            return (await this.axiosClient.get<Movimentacao>(`/ativo/${aberto}`)).data
+            return (await this.axiosClient.get<Movimentacao[]>(`/abertos/${true}`)).data
+        } catch (error:any) {
+            return Promise.reject(error.response.data)
+        }
+    }
+    public async listaAll(): Promise<Movimentacao[]> {
+        try {
+            return (await this.axiosClient.get<Movimentacao[]>(`/lista`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }
     }
 
-	public async cadastrar(movimentacao: Movimentacao): Promise<void> {
+
+	public async cadastrar(movimentacao: Movimentacao): Promise<string> {
 		try {
-			return (await this.axiosClient.post('/', movimentacao))
+            return (await this.axiosClient.post<string>(``, movimentacao)).data
+        } catch (error:any) {
+            return Promise.reject(error.response.data)
+        }
+	}
+
+	public async editar(id: number,movimentacao: Movimentacao): Promise<string> {
+		try {
+			return (await this.axiosClient.put<string>(`/${id}`, movimentacao)).data
+		} catch (error:any) {
+			return Promise.reject(error.response.data)
+		}
+	}
+
+	public async desativar(id: number,movimentacao: Movimentacao): Promise<string> {
+		try {
+			return (await this.axiosClient.put(`/${id}`, movimentacao)).data
 		} catch (error:any) {
 			return Promise.reject(error.response)
 		}
 	}
 
-	public async editar(movimentacao: Movimentacao): Promise<void> {
-		try {
-			return (await this.axiosClient.put(`/${movimentacao.id}`, movimentacao)).data
-		} catch (error:any) {
-			return Promise.reject(error.response)
-		}
-	}
-
-	public async desativar(movimentacao: Movimentacao): Promise<void> {
-		try {
-			return (await this.axiosClient.put(`/desativar/${movimentacao.id}`, movimentacao)).data
-		} catch (error:any) {
-			return Promise.reject(error.response)
-		}
-	}
-/* ======SE NECESSARIO======
-
-	public async deletaMovimentacao(movimentacao: Movimentacao): Promise<void> {
+	public async deletaMovimentacao(id: number): Promise<string> {
         try {
-          return (await this.axiosClient.delete(`/deletaMovimentacao/${movimentacao.id}`, { data: movimentacao })).data;
-        } catch (error: any) {
-          return Promise.reject(error.response);
+            return (await this.axiosClient.delete<string>(`/${id}`)).data
+        } catch (error:any) {
+            return Promise.reject(error.response)
         }
       }
-*/
+
 }
+export default new MovimentacaoClient();

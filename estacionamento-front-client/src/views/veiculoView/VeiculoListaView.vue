@@ -2,7 +2,7 @@
      <div class="container" style="margin-top: 10px;">
        <div class="row">
           <div class="col-md-10 text-start">
-             <p class="fs-3"> Veículos </p>
+             <p class="fs-3" id="MoviTit"> Veículos </p>
           </div>
           <div class="col-md-2">
              <div class="d-grid gap-2">
@@ -96,7 +96,9 @@ export default defineComponent({
 
 </script>
 
-<style>
-
-
+<style lang="scss">
+   #MoviTit{
+    color: #5e17eb;
+    font-weight: 700;
+   }
 </style>

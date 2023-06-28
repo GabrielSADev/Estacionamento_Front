@@ -17,7 +17,7 @@ import { Marca } from '@/model/marca';
         try {
             return (await this.axiosClient.get<Marca>(`/${id}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -25,7 +25,7 @@ import { Marca } from '@/model/marca';
         try {
             return (await this.axiosClient.get<Marca>(`/ativo/${ativo}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -33,7 +33,7 @@ import { Marca } from '@/model/marca';
         try {
             return (await this.axiosClient.get<Marca[]>(`/lista`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -41,7 +41,7 @@ import { Marca } from '@/model/marca';
 		try {
             return (await this.axiosClient.post<string>(``, marca)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
 	}
 
@@ -49,7 +49,7 @@ import { Marca } from '@/model/marca';
 		try {
 			return (await this.axiosClient.put<string>(`/${marca.id}`, marca)).data
 		} catch (error:any) {
-			return Promise.reject(error.response)
+			return Promise.reject(error.response.data)
 		}
 	}
 
@@ -65,7 +65,7 @@ import { Marca } from '@/model/marca';
         try {
             return (await this.axiosClient.delete<string>(`/${id}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
       }
 }

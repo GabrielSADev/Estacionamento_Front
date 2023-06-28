@@ -31,7 +31,7 @@ import { Configuracao } from '@/model/configuracao';
 		try {
             return (await this.axiosClient.post<string>(``, configuracao)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
 	}
 
@@ -39,7 +39,7 @@ import { Configuracao } from '@/model/configuracao';
 		try {
 			return (await this.axiosClient.put<string>(`/${configuracao.id}`, configuracao)).data
 		} catch (error:any) {
-			return Promise.reject(error.response)
+			return Promise.reject(error.response.data)
 		}
 	}
 
@@ -47,7 +47,7 @@ import { Configuracao } from '@/model/configuracao';
 		try {
 			return (await this.axiosClient.put(`/desativar/${configuracao.id}`, configuracao)).data
 		} catch (error:any) {
-			return Promise.reject(error.response)
+			return Promise.reject(error.response.data)
 		}
 	}
 }

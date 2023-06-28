@@ -2,11 +2,12 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
-  {
+ /* {
     path: '/',
     name: 'home',
     component: HomeView
   },
+  */
   {
     path: '/about',
     name: 'about',
@@ -83,7 +84,7 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   {
-    path: '/condutor/lista',
+    path: '/condutor/pag',
     name: 'condutor-lista-view',
     component: () => import('../views/condutorView/CondutorListaView.vue')
   },
@@ -107,7 +108,7 @@ const routes: Array<RouteRecordRaw> = [
 
   {
     path: "/configuracao/pagina",
-    name: "condutor-lista-view",
+    name: "configuracao-lista-view",
     component: () => import('../views/configView/ConfiguracaoListaView.vue')
   },
   {
@@ -130,15 +131,28 @@ const routes: Array<RouteRecordRaw> = [
 
 
   {
-    path:'/pag-Central',
+    path:'/',
     name:'paginaCentral',
-    component: () => import('../views/PgCentralView/PaginaCentralView.vue')
+    component: () => import('../views/MovimentacaoView/PaginaCentralView.vue'),
   },
   {
-    path:'/movimentacao',
-    name:'final movimentacao',
-    component: () => import('../views/MovimentacaoView/MoviLista.vue')
-  }
+    path:'/movimentacao/form',
+    name:'movimentacao-cadastro',
+    component: () => import('../views/MovimentacaoView/MoviFormView.vue'),
+  
+  children: [
+    {
+      path: '/cadastromovimentacao',
+      name: 'movimentacao-formulario-editar-view',
+      component: () => import(/* webpackChunkName: "about" */ '../views/MovimentacaoView/MoviFormView.vue')
+    },
+    {
+      path: '/cadastromovimentacao',
+      name: 'movimentacao-formulario-excluir-view',
+      component: () => import(/* webpackChunkName: "about" */ '../views/MovimentacaoView/MoviFormView.vue')
+    }
+  ]
+},
   
 ]
 

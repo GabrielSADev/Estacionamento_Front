@@ -20,15 +20,15 @@
   <div class="row">
   <div class="col-md-12 text-start">
          <label class="form-label">Nome:</label>
-         <input type="text"  class="form-control" v-model="condutor.nome">
+         <input type="text"  class="form-control" placeholder="Nome do Condutor" v-model="condutor.nome">
      </div>
      <div class="col-md-12 text-start">
          <label class="form-label">CPF: </label>
-         <input type="text" class="form-control" placeholder="ano" v-model="condutor.cpf">
+         <input type="text" class="form-control" placeholder="CPF" v-model="condutor.cpf">
      </div>
      <div class="col-md-12 text-start">
          <label class="form-label">Telefone: </label>
-         <input type="text" class="form-control" placeholder="ano" v-model="condutor.telefone">
+         <input type="text" class="form-control" placeholder="Telefone" v-model="condutor.telefone">
      </div>
   </div>
   
@@ -36,7 +36,7 @@
    <div class="col-md-3 offset-md-6"> 
      <div class="d-grid gap-2">
        <router-link type="button" class="btn btn-info" 
-         to="/condutor/lista">Voltar
+         to="/condutor/pag">Voltar
        </router-link>
      </div>
    </div>

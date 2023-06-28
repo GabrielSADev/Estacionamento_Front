@@ -20,7 +20,7 @@ import { Condutor } from "@/model/condutor";
         try {
             return (await this.axiosClient.get<Condutor>(`/${id}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -28,7 +28,7 @@ import { Condutor } from "@/model/condutor";
         try {
             return (await this.axiosClient.get<Condutor>(`/ativo/${ativo}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -36,7 +36,7 @@ import { Condutor } from "@/model/condutor";
         try {
             return (await this.axiosClient.get<Condutor[]>(`/lista`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -44,7 +44,7 @@ import { Condutor } from "@/model/condutor";
 		try {
             return (await this.axiosClient.post<string>(``, condutor)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
 	}
 
@@ -52,7 +52,7 @@ import { Condutor } from "@/model/condutor";
 		try {
 			return (await this.axiosClient.put<string>(`/${condutor.id}`, condutor)).data
 		} catch (error:any) {
-			return Promise.reject(error.response)
+			return Promise.reject(error.response.data)
 		}
 	}
 
@@ -60,7 +60,7 @@ import { Condutor } from "@/model/condutor";
 		try {
             return (await this.axiosClient.put<string>(`/${id}`, condutor)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
 	}
 
@@ -68,7 +68,7 @@ import { Condutor } from "@/model/condutor";
         try {
             return (await this.axiosClient.delete<string>(`/${id}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
       }
 }

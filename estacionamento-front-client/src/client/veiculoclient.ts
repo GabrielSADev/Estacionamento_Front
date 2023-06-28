@@ -17,7 +17,7 @@ import { Veiculo } from '@/model/veiculo';
         try {
             return (await this.axiosClient.get<Veiculo>(`/${id}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -25,7 +25,7 @@ import { Veiculo } from '@/model/veiculo';
         try {
             return (await this.axiosClient.get<Veiculo>(`/ativo/${ativo}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -34,7 +34,7 @@ import { Veiculo } from '@/model/veiculo';
         try {
             return (await this.axiosClient.get<Veiculo[]>(`/lista`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -43,7 +43,7 @@ import { Veiculo } from '@/model/veiculo';
 		try {
             return (await this.axiosClient.post<string>(``, veiculo)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
 	}
 
@@ -51,7 +51,7 @@ import { Veiculo } from '@/model/veiculo';
 		try {
 			return (await this.axiosClient.put<string>(`/${veiculo.id}`, veiculo)).data
 		} catch (error:any) {
-			return Promise.reject(error.response)
+			return Promise.reject(error.response.data)
 		}
 	}
 
@@ -59,7 +59,7 @@ import { Veiculo } from '@/model/veiculo';
         try {
             return (await this.axiosClient.put<string>(`/${id}`, veiculo)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
 	}
 
@@ -67,7 +67,7 @@ import { Veiculo } from '@/model/veiculo';
         try {
             return (await this.axiosClient.delete<string>(`/${id}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
       }
 }

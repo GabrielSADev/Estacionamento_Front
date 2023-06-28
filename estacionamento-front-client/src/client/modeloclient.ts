@@ -17,7 +17,7 @@ import { Modelo } from '@/model/modelo';
         try {
             return (await this.axiosClient.get<Modelo>(`/${id}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -25,7 +25,7 @@ import { Modelo } from '@/model/modelo';
         try {
             return (await this.axiosClient.get<Modelo>(`/ativo/${ativo}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -33,7 +33,7 @@ import { Modelo } from '@/model/modelo';
         try {
             return (await this.axiosClient.get<Modelo[]>(`/lista`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
     }
 
@@ -41,7 +41,7 @@ import { Modelo } from '@/model/modelo';
 		try {
             return (await this.axiosClient.post<string>(``, modelo)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
 	}
 
@@ -49,7 +49,7 @@ import { Modelo } from '@/model/modelo';
 		try {
 			return (await this.axiosClient.put<string>(`/${modelo.id}`, modelo)).data
 		} catch (error:any) {
-			return Promise.reject(error.response)
+			return Promise.reject(error.response.data)
 		}
 	}
 
@@ -57,7 +57,7 @@ import { Modelo } from '@/model/modelo';
 		try {
 			return (await this.axiosClient.put(`/${id}`, modelo)).data
 		} catch (error:any) {
-			return Promise.reject(error.response)
+			return Promise.reject(error.response.data)
 		}
 	}
 
@@ -65,7 +65,7 @@ import { Modelo } from '@/model/modelo';
         try {
             return (await this.axiosClient.delete<string>(`/${id}`)).data
         } catch (error:any) {
-            return Promise.reject(error.response)
+            return Promise.reject(error.response.data)
         }
       }
 }
